@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Product;
 
 use Carbon\Carbon;
 
@@ -31,14 +32,17 @@ class ProductController extends Controller
     public function get(){
         return response()->json([
             'message' => 'Success',
-            'data' => DB::table('product')->get()
+            'data' => Product::all()
         ]);
     }
 
     public function getById($id, Request $request){
+        $a = Product::find(1);
+        $a->detail;
+
         return response()->json([
             'message' => 'Success',
-            'data' => DB::table('product')->where('id', $id)->get()
+            'data' => $a
         ]);
     }
 }

@@ -22,4 +22,7 @@ Route::prefix('product')->group(function () {
     Route::post('/', 'ProductController@create');
     Route::get('/', 'ProductController@get');
     Route::get('/{id}', 'ProductController@getById');
+
+    Route::post('/{id}/detail', 'ProductDetailController@create');
+    Route::get('/{id}/detail', 'ProductDetailController@get');
 });
