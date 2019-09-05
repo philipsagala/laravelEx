@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('/user', 'UserController@index');
+
+
+Route::prefix('product')->group(function () {
+    Route::post('/', 'ProductController@create');
+    Route::get('/', 'ProductController@get');
+    Route::get('/{id}', 'ProductController@getById');
+});
