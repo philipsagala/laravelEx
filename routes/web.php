@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/user', 'UserController@index');
-
-
 Route::prefix('product')->group(function () {
     Route::post('/', 'ProductController@create');
     Route::get('/', 'ProductController@get');
@@ -25,4 +22,9 @@ Route::prefix('product')->group(function () {
 
     Route::post('/{id}/detail', 'ProductDetailController@create');
     Route::get('/{id}/detail', 'ProductDetailController@get');
+});
+
+Route::prefix('transaction')->group(function () {
+    Route::get('/', 'TransactionController@get');
+    Route::post('/', 'TransactionController@create');
 });
