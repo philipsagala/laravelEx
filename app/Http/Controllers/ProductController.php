@@ -45,4 +45,10 @@ class ProductController extends Controller
             'data' => $a
         ]);
     }
+
+    public function display(){
+        $product = Product::all();
+        
+        return view('product', ['products' => $product]);
+    }
 }

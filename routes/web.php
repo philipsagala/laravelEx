@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/display', 'ProductController@display');
+
 Route::prefix('product')->group(function () {
     Route::post('/', 'ProductController@create');
     Route::get('/', 'ProductController@get');
