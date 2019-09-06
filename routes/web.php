@@ -26,5 +26,5 @@ Route::prefix('product')->group(function () {
 
 Route::prefix('transaction')->group(function () {
     Route::get('/', 'TransactionController@get');
-    Route::post('/', 'TransactionController@create');
+    Route::post('/', 'TransactionController@create')->middleware('validateOrder');
 });
